@@ -11,7 +11,7 @@ import web.DbListener;
 
 /**
  *
- * @author palom
+ * @author Rafael
  */
 public class User {
     private String name;
