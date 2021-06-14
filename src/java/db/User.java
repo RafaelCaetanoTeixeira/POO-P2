@@ -28,6 +28,7 @@ public class User {
                     rs.getString("name")
                     , rs.getString("login")
                     , rs.getString("role")
+                    
             ));
         }
         rs.close();
