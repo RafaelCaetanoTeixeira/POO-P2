@@ -19,6 +19,26 @@
             
         <hr/>
         
-        <h1>Hello World!</h1>
+  <% String login = (String) session.getAttribute("user.login");%>
+        <%if(login == null){%>
+            <div>Esta página é restrita a usuários logados.</div>
+        <%}else{%>
+        <table border="1">
+            <tr>
+                <th>Nome</th>
+                <th>Nota P1</th>
+                <th>Nota P2</th>
+                <th>Média</th>
+            </tr>
+            <%for(Disciplinas disciplina: Disciplinas.getDisciplinas()){%>
+                <tr>
+                    <td><%= disciplina.getNome()%></td>
+                    <td><%= disciplina.getNotap1()%></td>
+                    <td><%= disciplina.getNotap2()%></td>
+                    <td> <%=(disciplina.getNotap1() + disciplina.getNotap2()) / 2 %></td>
+                </tr>
+            <%}%>
+        </table>
+        <%}%>
     </body>
 </html>
